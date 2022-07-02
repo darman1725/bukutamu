@@ -1,8 +1,13 @@
 @extends('app')
 @section('content')
 <div class="card">
+    @if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+    @endif
     <div class="card-header">
-        Data Buku Tamu <br><br> <a href="" class="btn btn-success">Tambah Data</a>
+        Data Buku Tamu <br><br> <a href="{{url('admin/form-tambah')}}" class="btn btn-success">Tambah Data</a>
     </div>
     <div class="card-body">
         <table class="table" id="myTable">
