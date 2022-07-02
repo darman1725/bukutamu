@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\TamuController as AdminTamuController;
 use App\Http\Controllers\User\TamuController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
@@ -23,4 +24,4 @@ Route::post('simpan-bukutamu', [TamuController::class, 'simpanTamu'])->name('sim
 
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-
+Route::get('admin/tamu', [AdminTamuController::class, 'index'])->name('admin-tamu');
