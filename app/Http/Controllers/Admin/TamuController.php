@@ -33,6 +33,28 @@ class TamuController extends Controller
         $data->save();
 
         return redirect('admin/tamu')->with('status', 'Data Tamu Berhasil Disimpan');
+    }
+
+    public function formEdit($id){
+        $data = User::find($id);
+        return view('Admin.Tamu.formEdit', compact('data'));
+    }
+
+    public function updateTamu(Request $request){
+        $id = $request->id;
+        $nama = $request->nama;
+        $telepon = $request->telepon;
+        $alamat = $request->alamat;
+        $email = $request->email;
+
+        $data = User::find($id);
+        $data->nama = $nama;
+        $data->tlp = $telepon;
+        $data->alamat = $alamat;
+        $data->email = $email;
+        $data->update();
+
+        return redirect('admin/tamu')->with('status', 'Data Tamu Berhasil Diupdate');
 
     }
 
