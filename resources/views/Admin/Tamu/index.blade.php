@@ -8,6 +8,8 @@
     @endif
     <div class="card-header">
         Data Buku Tamu <br><br> <a href="{{url('admin/form-tambah')}}" class="btn btn-success">Tambah Data</a>
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css">
     </div>
     <div class="card-body">
         <table class="table" id="myTable">
@@ -16,8 +18,8 @@
                     <th scope="col">No</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Telepon</th>
-                    <th scope="col">Email</th>
                     <th scope="col">Alamat</th>
+                    <th scope="col">Email</th>
                     <th scope="col" style="width: 15%">Aksi</th>
                 </tr>
             </thead>
@@ -52,9 +54,23 @@
 @endsection
 
 @section('script')
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.flash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
+
 <script>
     $(document).ready( function () {
-    $('#myTable').DataTable();
-    } );
+    $('#myTable').DataTable({
+        dom: 'Bfrtip',
+        buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+    });
+    });
 </script>
 @endsection
