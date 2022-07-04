@@ -22,9 +22,9 @@ Route::get('/', function () {
 
 // Bagian User
 Route::post('simpan-bukutamu', [TamuController::class, 'simpanTamu'])->name('simpan-bukutamu');
-Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 // Bagian Admin
+Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('admin/tamu', [AdminTamuController::class, 'index'])->name('admin-tamu');
 Route::get('admin/form-tambah', [AdminTamuController::class, 'formTambah'])->name('admin-form-tambah');
 Route::post('admin/simpan-data',[AdminTamuController::class, 'simpanData'])->name('admin-simpan-data');

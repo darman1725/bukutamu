@@ -20,7 +20,7 @@
                     <th scope="col">Telepon</th>
                     <th scope="col">Alamat</th>
                     <th scope="col">Email</th>
-                    <th scope="col" style="width: 15%">Aksi</th>
+                    <th scope="col" style="width: 18%">Aksi</th>
                 </tr>
             </thead>
             <tbody>
