@@ -18,9 +18,12 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'nama',
+        'tlp',
+        'alamat',
+        'pekerjaan',
         'email',
-        'password',
+        'password'
     ];
 
     /**
@@ -41,4 +44,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // Ini adalah contoh menghubungkan tabel berelasi
+
+    public function jpekerjaan() {
+        return $this->belongsTo(Pekerjaan::class, 'pekerjaan');
+    }
 }

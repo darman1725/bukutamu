@@ -16,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [App\Http\Controllers\User\TamuController::class, 'formTamu'])->name('admin-form-tamu');
 
 // Bagian User
 Route::post('simpan-bukutamu', [TamuController::class, 'simpanTamu'])->name('simpan-bukutamu');
@@ -29,5 +27,5 @@ Route::get('admin/tamu', [AdminTamuController::class, 'index'])->name('admin-tam
 Route::get('admin/form-tambah', [AdminTamuController::class, 'formTambah'])->name('admin-form-tambah');
 Route::post('admin/simpan-data',[AdminTamuController::class, 'simpanData'])->name('admin-simpan-data');
 Route::get('admin/form-edit/{id}',[AdminTamuController::class, 'formEdit'])->name('admin-form-edit');
-Route::post('admin/update-data', [AdminTamuController::class, 'updateTamu'])->name('admin-update-data');
+Route::post('admin/update-data/{id}', [AdminTamuController::class, 'updateTamu'])->name('admin-update-data');
 Route::post('admin/hapus-data', [AdminTamuController::class, 'hapusTamu'])->name('admin-hapus-data');

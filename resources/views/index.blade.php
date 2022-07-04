@@ -56,6 +56,15 @@
 								<textarea name="alamat" class="form-control" placeholder="Silahkan isi alamat anda"
 									cols="3"></textarea>
 							</div>
+							<div class="form-group mb-3">
+								<label class="label" for="password">Pekerjaan</label>
+								<select class="custom-select my-1 mr-sm-2" name="pekerjaan" id="inlineFormCustomSelectPref">
+									<option selected="">Pilih Pekerjaan</option>
+									@foreach ($pekerjaan as $p)
+									<option value="{{ $p->id }}">{{$p->jenis_pekerjaan}}</option>
+									@endforeach
+								</select>
+							</div>
 							<div class="form-group">
 								<button type="submit" class="form-control btn btn-primary rounded submit px-3">Simpan
 								</button>

@@ -19,6 +19,7 @@
                     <th scope="col">Nama</th>
                     <th scope="col">Telepon</th>
                     <th scope="col">Alamat</th>
+                    <th scope="col">Pekerjaan</th>
                     <th scope="col">Email</th>
                     <th scope="col" style="width: 18%">Aksi</th>
                 </tr>
@@ -30,6 +31,7 @@
                     <td>{{ $item->nama }}</td>
                     <td>{{ $item->tlp }}</td>
                     <td>{{ $item->alamat }}</td>
+                    <td>{{ $item->jpekerjaan->jenis_pekerjaan}}
                     <td>{{ $item->email }}</td>
                     <td>
                         <div class="row">
@@ -40,7 +42,9 @@
                                 <form action="{{url('admin/hapus-data')}}" method="post">
                                     @csrf
                                     <input type="hidden" name="id" value="{{$item->id}}">
-                                    <button type="submit" class="btn btn-danger">Hapus</button>
+                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item ?')">Hapus</button>
+
+                                    
                                 </form>
                             </div>
                         </div>
