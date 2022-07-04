@@ -6,8 +6,9 @@
           Form Edit Buku Tamu
         </div>
         <div class="card-body">
-            <form action="{{url('admin/update-data')}}" method="post">
+            <form action="{{url('admin/update-data/'.$data->id)}}" method="post" enctype="multipart/form-data">
                 @csrf
+               
                 <div class="form-group">
                     <label for="nama">Nama</label>
                     <input type="text" class="form-control" name="nama" id="nama" aria-describedby="nama" value="{{$data->nama}}">
@@ -20,6 +21,16 @@
                   <label for="alamat">Alamat</label>
                  <textarea name="alamat" class="form-control">{{$data->alamat}}</textarea>
                 </div>
+                <div class="form-group">
+                  <label class="form-label"><b>Pekerjaan</b></label>
+                  <select class="form-select mb-3 shadow-none" name="pekerjaan" id="pekerjaan">
+                      <option disabled value>Pilih Pekerjaan</option>
+                      <option value="{{ $data->pekerjaan }}">{{ $data->jpekerjaan->jenis_pekerjaan }}</option>
+                      @foreach ($pekerjaan as $p)
+                      <option value="{{ $p->id }}">{{ $p->jenis_pekerjaan }}</option>
+                      @endforeach
+                  </select>
+              </div>
                 <div class="form-group">
                   <label for="email">Email</label>
                   <input type="email" class="form-control" name="email" id="email" aria-describedby="email" value="{{$data->email}}">
