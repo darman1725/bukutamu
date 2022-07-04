@@ -20,6 +20,15 @@
                   <label for="alamat">Alamat</label>
                  <textarea name="alamat" class="form-control"></textarea>
                 </div>
+                <div class="form-group mb-3">
+                  <label class="label" for="password">Pekerjaan</label>
+                  <select class="custom-select my-1 mr-sm-2" name="pekerjaan" id="inlineFormCustomSelectPref">
+                    <option selected="">Pilih Pekerjaan</option>
+                    @foreach ($pekerjaan as $p)
+                    <option value="{{ $p->id }}">{{$p->jenis_pekerjaan}}</option>
+                    @endforeach
+                  </select>
+                </div>
                 <div class="form-group">
                   <label for="email">Email</label>
                   <input type="email" class="form-control" name="email" id="email" aria-describedby="email">
