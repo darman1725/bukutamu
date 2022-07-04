@@ -31,7 +31,19 @@
         <li class="nav-item">
             <a class="nav-link" href="{{route('admin-tamu')}}">
                 <i class="fas fa-fw fa-users"></i>
-                <span>Data Buku Tamu</span></a>
+                <span>Customer</span></a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fas fa-sync-alt"></i>
+                <span>Transaction</span></a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="far fa-handshake"></i>
+                <span>Feedback</span></a>
         </li>
 
 </ul>
