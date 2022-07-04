@@ -9,6 +9,9 @@ class DashboardController extends Controller
 {
     public function index(){
         $pengunjung = User::count();
-        return view('dashboard', compact('pengunjung'));
+        $asn = User::where('pekerjaan', '=', 1)->count();
+        $mahasiswa= User::where('pekerjaan', '=', 2)->count();
+        $dosen = User::where('pekerjaan', '=', 3)->count();
+        return view('dashboard', compact('pengunjung','asn','mahasiswa','dosen'));
     }
 }
